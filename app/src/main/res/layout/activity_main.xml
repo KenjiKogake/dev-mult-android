@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.office.aula01.MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/login.usuario"
+        android:id="@+id/txtUsuario" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/trocar"
+        android:text="@string/login.trocar"
+        android:layout_centerVertical="true"
+        android:layout_below="@id/txtUsuario"
+        android:layout_alignParentEnd="true"/>
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/trocar"
+        android:layout_alignParentStart="true"
+        android:id="@+id/radioGroup"
+        android:onClick="mudaParaLua">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sol"
+            android:id="@+id/radioButtonSol"
+            android:layout_below="@+id/trocar"
+            android:layout_alignParentStart="true"/>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lua"
+            android:id="@+id/radioButtonLua"
+            android:layout_below="@+id/trocar"
+            android:layout_toEndOf="@+id/radioButtonSol"
+            android:onClick="mudaParaSol" />
+
+    </RadioGroup>
+
+    <ImageView
+        android:src="@drawable/lua"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/image"
+        android:layout_below="@+id/radioGroup"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="51dp"
+        android:onClick="mudaParaLua"/>
+
+</RelativeLayout>
