@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,15 +29,19 @@ public class MainActivity extends AppCompatActivity {
         ((Button) findViewById(R.id.trocar)).setVisibility(View.INVISIBLE);
     }
 
-    public void mudaParaSol(View view) {
+    public void mudaImagem(View view) {
 
-        Integer id = ((RadioGroup) findViewById(R.id.radioGroup)).getCheckedRadioButtonId();
+        switch (view.getId()) {
+            case R.id.radioButtonSol:
+                ((ImageView) findViewById(R.id.image)).setImageResource(R.drawable.sol);
+                break;
+            case R.id.radioButtonLua:
+                ((ImageView) findViewById(R.id.image)).setImageResource(R.drawable.lua);
+                break;
+        }
 
-        ((ImageView) findViewById(R.id.image)).setImageResource(R.drawable.sol);
+        Toast.makeText(this, "Selecionou", Toast.LENGTH_SHORT).show();
     }
 
-    public void mudaParaLua(View view) {
-        ((ImageView) findViewById(R.id.image)).setImageResource(R.drawable.lua);
-    }
 
 }
